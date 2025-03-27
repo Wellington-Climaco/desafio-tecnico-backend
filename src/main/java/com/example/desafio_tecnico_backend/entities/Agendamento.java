@@ -20,7 +20,7 @@ import java.util.UUID;
 public class Agendamento {
 
     @Id
-    public String Id;
+    public UUID Id;
     public Date DataHora;
     public String Destinatario;
     public String Mensagem;
@@ -28,7 +28,7 @@ public class Agendamento {
     public String Status;
 
     public Agendamento(Date DataHora, String Destinatario, String Mensagem,TipoEnvio envio){
-        this.Id = UUID.randomUUID().toString();
+        this.Id = UUID.randomUUID();
         this.DataHora = DataHora;
         this.Destinatario = Destinatario;
         this.Mensagem = Mensagem;
