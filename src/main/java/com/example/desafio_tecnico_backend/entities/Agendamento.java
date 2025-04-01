@@ -20,20 +20,20 @@ import java.util.UUID;
 public class Agendamento {
 
     @Id
-    public UUID Id;
-    public Date DataHora;
-    public String Destinatario;
-    public String Mensagem;
-    public String TipoEnvio;
-    public String Status;
+    public UUID id;
+    public Date dataHora;
+    public String destinatario;
+    public String mensagem;
+    public String tipoEnvio;
+    public String status;
 
     public Agendamento(Date DataHora, String Destinatario, String Mensagem,TipoEnvio envio){
-        this.Id = UUID.randomUUID();
-        this.DataHora = DataHora;
-        this.Destinatario = Destinatario;
-        this.Mensagem = Mensagem;
-        this.TipoEnvio = envio.toString();
-        this.Status = StatusEnvio.PENDENTE.toString();
+        this.id = UUID.randomUUID();
+        this.dataHora = DataHora;
+        this.destinatario = Destinatario;
+        this.mensagem = Mensagem;
+        this.tipoEnvio = envio.toString();
+        this.status = StatusEnvio.PENDENTE.toString();
     }
 
 

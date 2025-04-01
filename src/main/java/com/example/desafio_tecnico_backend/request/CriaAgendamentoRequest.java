@@ -2,10 +2,8 @@ package com.example.desafio_tecnico_backend.request;
 
 import com.example.desafio_tecnico_backend.entities.Agendamento;
 import com.example.desafio_tecnico_backend.enums.TipoEnvio;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import java.util.Date;
@@ -15,6 +13,7 @@ import java.util.Date;
 public class CriaAgendamentoRequest {
 
     @NotNull(message = "DataHora não pode ser nulo.")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss")
     public Date DataHora;
 
     @NotBlank(message = "Destinatario não pode ser vazio.")
@@ -24,6 +23,7 @@ public class CriaAgendamentoRequest {
     public String Mensagem;
 
     @NotBlank (message = "Envio não pode ser vazio.")
+    @Pattern(regexp = "WHATSAPP|SMS|EMAIL", message = "Tipo de notificação inválido. Valores permitidos: WHATSAPP, SMS e EMAIL.")
     public String Envio;
 
     public Agendamento MapToEntity(){

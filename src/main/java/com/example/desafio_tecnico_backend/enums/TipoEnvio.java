@@ -4,5 +4,4 @@ public enum TipoEnvio {
     EMAIL,
     SMS,
     WHATSAPP,
-    PUSH
 }
